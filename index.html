@@ -219,7 +219,15 @@ section.alt .tl-detail{background:var(--bg-alt)}
 .rm-btn{margin-top:22px;background:var(--navy);color:#fff;border:0;border-radius:6px;padding:14px 28px;font-size:15px;font-weight:700;cursor:pointer;font-family:inherit;letter-spacing:.01em}
 .rm-btn:hover{background:var(--navy-2)}
 /* ROADMAP SUBPAGE */
-#rmpage,#qpage,#wpage{position:fixed;inset:0;z-index:200;background:#fff;overflow-y:auto}
+#rmpage,#qpage,#wpage,#ipage,#dpage{position:fixed;inset:0;z-index:200;background:#fff;overflow-y:auto}
+.qp-legend{font-size:13.5px;color:var(--ink);opacity:.8;margin:-6px 0 26px}
+.qp-req,.qp-req-demo{display:inline-block;font-size:11.5px;font-weight:600;letter-spacing:.02em;color:var(--steel);border:1px solid var(--steel);border-radius:3px;padding:0 6px;margin-left:4px;text-decoration:none;white-space:nowrap}
+.qp-req:hover{background:var(--steel);color:#fff}
+.lg-body{padding:52px 28px 84px;max-width:780px}
+.lg-body h3{font-size:13px;letter-spacing:.14em;text-transform:uppercase;color:var(--navy);margin:30px 0 8px;border-top:2px solid var(--navy);padding-top:14px}
+.lg-body p{font-size:15px;line-height:1.6;color:var(--ink);margin:0 0 8px}
+.lg-body a{color:var(--steel);font-weight:600}
+@media(max-width:520px){.rmp-barin .brand{display:none}.lg-body,.qp-body{padding-left:16px;padding-right:16px}}
 /* WERKSTATT SUBPAGE + KI-TOOL */
 .wp-body{padding:52px 28px 92px;max-width:1000px;margin:0 auto}
 .wp-lead{font-size:20px;color:var(--ink);line-height:1.7;max-width:76ch;margin-bottom:6px}
@@ -603,7 +611,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
       <div>
         <div class="pn">Datenquelle · zentral</div>
         <h3>Standortarchiv Schöneweide</h3>
-        <p>Alle Zahlen und Fakten auf dieser Seite sind im <b>offenen Standortarchiv des Industriesalons Schöneweide</b> belegt. Als unabhängiger Wissensträger und Kompetenzzentrum für den Standort im Bezirk Treptow-Köpenick bündelt der Industriesalon das Wissen über Oberschöneweide, prüft es an den Originalquellen und macht es öffentlich zugänglich. Wo sich Quellen widersprechen, sagen wir es.</p>
+        <p>Alle Zahlen und Fakten auf dieser Seite sind im <b>Standortarchiv des Industriesalons Schöneweide</b> belegt. Als unabhängiger Wissensträger und Kompetenzzentrum für den Standort im Bezirk Treptow-Köpenick bündelt der Industriesalon das Wissen über Oberschöneweide, prüft es an den Originalquellen und macht es öffentlich zugänglich. Wo sich Quellen widersprechen, sagen wir es.</p>
         <div class="provlinks">
           <a href="https://industriesalon-schoeneweide.github.io/schoeneweide-register/" target="_blank" rel="noopener">Standortregister Schöneweide, ein Projekt des Industriesalons →</a>
           <button class="qbtn" type="button" onclick="openQuellen()">Alle Quellen ansehen →</button>
@@ -941,9 +949,9 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
 
 <footer>
   <div class="wrap">
-    <div style="flex-basis:100%;color:#A6B8CC;border-bottom:1px solid rgba(255,255,255,.09);padding-bottom:15px;margin-bottom:5px;line-height:1.6">Alle Daten und Fakten stammen aus dem <b style="color:#D3DFED;font-weight:600">Standortarchiv Schöneweide</b>, dem offenen Standortarchiv des Industriesalons Schöneweide, unabhängiger Wissensträger und Kompetenzzentrum für den Standort.</div>
+    <div style="flex-basis:100%;color:#A6B8CC;border-bottom:1px solid rgba(255,255,255,.09);padding-bottom:15px;margin-bottom:5px;line-height:1.6">Alle Daten und Fakten stammen aus dem <b style="color:#D3DFED;font-weight:600">Standortarchiv Schöneweide</b> des Industriesalons Schöneweide, unabhängiger Wissensträger und Kompetenzzentrum für den Standort.</div>
     <div>© 2026 Standortgemeinschaft Schöneweide · c/o Industriesalon Schöneweide e.V.</div>
-    <div><a href="#standort" onclick="openQuellen();return false;" style="color:#9DC0E4;font-weight:600">Quellen &amp; Standortarchiv</a> · Zukunftsort Oberschöneweide · Berlin Treptow-Köpenick</div>
+    <div><a href="#standort" onclick="openQuellen();return false;" style="color:#9DC0E4;font-weight:600">Quellen &amp; Standortarchiv</a> · <a href="#impressum" onclick="openLegal('ipage');return false;" style="color:#9DC0E4;font-weight:600">Impressum</a> · <a href="#datenschutz" onclick="openLegal('dpage');return false;" style="color:#9DC0E4;font-weight:600">Datenschutz</a> · Zukunftsort Oberschöneweide · Berlin Treptow-Köpenick</div>
   </div>
 </footer>
 
@@ -1026,6 +1034,70 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
   </div>
 </div>
 
+<!-- IMPRESSUM SUBPAGE -->
+<div id="ipage" hidden>
+  <div class="rmp-bar">
+    <div class="wrap rmp-barin">
+      <div class="brand">Standort<span>gemeinschaft</span> Schöneweide</div>
+      <button class="rmp-close" onclick="closeLegal('ipage')">← Zurück zur Übersicht</button>
+    </div>
+  </div>
+  <div class="wrap lg-body">
+    <div class="kicker">Rechtliches</div>
+    <h1 class="rmp-title">Impressum</h1>
+    <p>Angaben gemäß § 5 DDG (Digitale-Dienste-Gesetz)</p>
+    <h3>Anbieter</h3>
+    <p>Industriesalon Schöneweide e.V.<br>Reinbeckstraße 10<br>12459 Berlin</p>
+    <h3>Kontakt</h3>
+    <p>Telefon: (030) 53 00 70 42<br>E-Mail: <a href="mailto:info@industriesalon.de">info@industriesalon.de</a><br>Web: <a href="https://www.industriesalon.de" target="_blank" rel="noopener">www.industriesalon.de</a></p>
+    <h3>Vertretungsberechtigter Vorstand</h3>
+    <p>Klaus Burmeister (Vorsitzender)<br>Thomas Irmer (stellvertretender Vorsitzender)<br>Angelika Wall (stellvertretende Vorsitzende)<br>Gewählt von der Mitgliederversammlung am 9. Oktober 2026.</p>
+    <h3>Vereinsregister</h3>
+    <p>Amtsgericht Charlottenburg, VR 29071 B</p>
+    <h3>Gemeinnützigkeit</h3>
+    <p>Der Industriesalon Schöneweide e.V. ist als gemeinnützige Körperschaft anerkannt (Freistellungsbescheid des Finanzamts für Körperschaften I vom 12.12.2024).</p>
+    <h3>Verantwortlich für den Inhalt nach § 18 Abs. 2 MStV</h3>
+    <p>Klaus Burmeister<br>c/o Industriesalon Schöneweide e.V.<br>Reinbeckstraße 10, 12459 Berlin</p>
+    <h3>Zur Standortgemeinschaft Schöneweide</h3>
+    <p>Die Standortgemeinschaft Schöneweide ist ein Zusammenschluss von Akteuren am Standort ohne eigene Rechtsform. Anbieter dieser Website ist der Industriesalon Schöneweide e.V.</p>
+    <h3>Haftung für Inhalte</h3>
+    <p>Als Diensteanbieter sind wir gemäß § 7 Abs. 1 DDG für eigene Inhalte auf diesen Seiten nach den allgemeinen Gesetzen verantwortlich. Nach §§ 8 bis 10 DDG sind wir jedoch nicht verpflichtet, übermittelte oder gespeicherte fremde Informationen zu überwachen oder nach Umständen zu forschen, die auf eine rechtswidrige Tätigkeit hinweisen.</p>
+    <h3>Haftung für Links</h3>
+    <p>Diese Website enthält Links zu externen Webseiten Dritter, auf deren Inhalte wir keinen Einfluss haben. Für die Inhalte der verlinkten Seiten ist stets der jeweilige Anbieter oder Betreiber verantwortlich.</p>
+    <p style="margin-top:30px;font-size:13px;opacity:.7">Stand: Oktober 2026</p>
+  </div>
+</div>
+
+<!-- DATENSCHUTZ SUBPAGE -->
+<div id="dpage" hidden>
+  <div class="rmp-bar">
+    <div class="wrap rmp-barin">
+      <div class="brand">Standort<span>gemeinschaft</span> Schöneweide</div>
+      <button class="rmp-close" onclick="closeLegal('dpage')">← Zurück zur Übersicht</button>
+    </div>
+  </div>
+  <div class="wrap lg-body">
+    <div class="kicker">Rechtliches</div>
+    <h1 class="rmp-title">Datenschutz</h1>
+    <p>Diese Website ist eine statische Informationsseite. Wir selbst erheben keine personenbezogenen Daten von Besucherinnen und Besuchern.</p>
+    <h3>1. Verantwortlicher</h3>
+    <p>Industriesalon Schöneweide e.V.<br>Reinbeckstraße 10, 12459 Berlin<br>E-Mail: <a href="mailto:info@industriesalon.de">info@industriesalon.de</a></p>
+    <h3>2. Hosting</h3>
+    <p>Die Website wird über GitHub Pages bereitgestellt, einen Dienst der GitHub, Inc., 88 Colin P. Kelly Jr. Street, San Francisco, CA 94107, USA. Beim Aufruf verarbeitet GitHub technisch notwendige Daten, insbesondere die IP-Adresse, um die Seite auszuliefern und den Dienst abzusichern. Dabei können Daten in die USA übermittelt werden. Rechtsgrundlage ist Art. 6 Abs. 1 lit. f DSGVO (berechtigtes Interesse an einer sicheren und erreichbaren Website). Einzelheiten in der <a href="https://docs.github.com/de/site-policy/privacy-policies/github-general-privacy-statement" target="_blank" rel="noopener">Datenschutzerklärung von GitHub</a>.</p>
+    <h3>3. Keine Cookies, kein Tracking</h3>
+    <p>Diese Website setzt keine Cookies und nutzt kein Tracking, kein Analysewerkzeug, keine externen Schriften und keine Skripte von Drittanbietern.</p>
+    <h3>4. Interaktive Elemente</h3>
+    <p>Eingaben in „Frag die Werkstatt“ und in der Zielkonflikt-Karte werden nur in Ihrem Browser verarbeitet. Sie werden weder übertragen noch gespeichert.</p>
+    <h3>5. Kontakt per E-Mail</h3>
+    <p>Wenn Sie uns per E-Mail schreiben, verarbeiten wir Ihre Angaben, um Ihre Anfrage zu bearbeiten (Art. 6 Abs. 1 lit. b und f DSGVO). Wir geben sie ohne Ihre Einwilligung nicht weiter und löschen sie, sobald sie dafür nicht mehr gebraucht werden.</p>
+    <h3>6. Externe Links</h3>
+    <p>Diese Website verlinkt auf Seiten Dritter, etwa berlin.de oder htw-berlin.de. Dort gelten die Datenschutzbestimmungen der jeweiligen Anbieter.</p>
+    <h3>7. Ihre Rechte</h3>
+    <p>Sie haben das Recht auf Auskunft, Berichtigung, Löschung und Einschränkung der Verarbeitung Ihrer Daten, auf Datenübertragbarkeit und auf Widerspruch. Wenden Sie sich dazu an die oben genannte E-Mail-Adresse. Sie können sich außerdem bei der Berliner Beauftragten für Datenschutz und Informationsfreiheit beschweren.</p>
+    <p style="margin-top:30px;font-size:13px;opacity:.7">Stand: Oktober 2026</p>
+  </div>
+</div>
+
 <!-- QUELLEN SUBPAGE -->
 <div id="qpage" hidden>
   <div class="rmp-bar">
@@ -1037,15 +1109,16 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
   <div class="wrap qp-body">
     <div class="kicker">Quellen · Standortarchiv Schöneweide</div>
     <h1 class="rmp-title">Woher unser Wissen kommt</h1>
-    <p class="rmp-intro">Alle Zahlen, Fakten und Aussagen dieser Website stammen aus dem offenen Standortarchiv des Industriesalons Schöneweide. Das Archiv ist offen und wird laufend gepflegt. Hier die Quellen, nach Themen geordnet.</p>
+    <p class="rmp-intro">Alle Zahlen, Fakten und Aussagen dieser Website stammen aus dem Standortarchiv des Industriesalons Schöneweide. Das Archiv wird laufend gepflegt. Öffentlich zugängliche Quellen sind verlinkt. Interne Dokumente des Archivs wie Papiere, Befragungen und Präsentationen stellen wir auf Anfrage zur Verfügung. Hier die Quellen, nach Themen geordnet.</p>
+    <p class="qp-legend"><b>Verlinkt</b>: öffentlich zugänglich. <span class="qp-req-demo">auf Anfrage</span>: Dokument im Standortarchiv, per E-Mail anzufordern.</p>
     <div class="qp-groups">
       <div class="qp-group">
         <h3>Geschichte des Standorts</h3>
         <ul>
-          <li>Regionalmanagement Berlin Schöneweide, WISTA-Management GmbH <span class="src">(aktiv 2011–2017)</span></li>
-          <li>Projektskizze Industriesalon Schöneweide <span class="src">(2009)</span></li>
-          <li>SWOT-Analyse Schöneweide <span class="src">(2013)</span></li>
-          <li>AEG Kabelwerk Oberspree, Denkmaldatenbank Berlin; Wikipedia <span class="src">(Bau- und Betriebsdaten)</span></li>
+          <li>Regionalmanagement Berlin Schöneweide, WISTA-Management GmbH <span class="src">(aktiv 2011–2017)</span> <a class="qp-req" href="mailto:burmeister@industriesalon.de?subject=Standortarchiv%3A%20Regionalmanagement%20Berlin%20Sch%C3%B6neweide%2C%20WISTA-Management%20GmbH">auf Anfrage</a></li>
+          <li>Projektskizze Industriesalon Schöneweide <span class="src">(2009)</span> <a class="qp-req" href="mailto:burmeister@industriesalon.de?subject=Standortarchiv%3A%20Projektskizze%20Industriesalon%20Sch%C3%B6neweide">auf Anfrage</a></li>
+          <li>SWOT-Analyse Schöneweide <span class="src">(2013)</span> <a class="qp-req" href="mailto:burmeister@industriesalon.de?subject=Standortarchiv%3A%20SWOT-Analyse%20Sch%C3%B6neweide">auf Anfrage</a></li>
+          <li><a href="https://www.berlin.de/landesdenkmalamt/denkmale/aus-der-praxis-erkennen-und-erhalten/industrie-und-verkehr/kabelwerk-oberspree-640704.php" target="_blank" rel="noopener">AEG Kabelwerk Oberspree, Landesdenkmalamt Berlin</a>; <a href="https://en.wikipedia.org/wiki/KWO_Berlin" target="_blank" rel="noopener">Wikipedia (englisch): KWO Berlin</a> <span class="src">(Bau- und Betriebsdaten, geprüft am 20.10.2026)</span></li>
         </ul>
       </div>
       <div class="qp-group">
@@ -1054,44 +1127,44 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
           <li><a href="https://zukunftsorte.berlin/standorte/wirtschafts-und-wissenschaftsstandort-berlin-schoeneweide/" target="_blank" rel="noopener">WISTA-Management GmbH, Zukunftsorte Berlin: Wirtschafts- und Wissenschaftsstandort Berlin Schöneweide</a> <span class="src">(Stand Juli 2026, geprüft am 20.10.2026)</span></li>
           <li><a href="https://www.htw-berlin.de/files/Presse/Infomaterial/HTW_Berlin-in-Zahlen_A5_Doppelseiten-deutsch.pdf" target="_blank" rel="noopener">HTW Berlin in Zahlen</a> <span class="src">(Juni 2026)</span></li>
           <li><a href="https://www.berlin.de/sen/wirtschaft/technologiezentren-zukunftsorte-smart-city/zukunftsorte/schoeneweide/artikel.420750.php" target="_blank" rel="noopener">Senatsverwaltung für Wirtschaft, Energie und Betriebe: Zukunftsort Schöneweide</a> <span class="src">(Stand 2022)</span></li>
-          <li>Zukunftsorte Berlin, „Potenzial Schöneweide“, frühere Kennzahlen <span class="src">(2020)</span></li>
-          <li>Zukunftsort Schöneweide, Brüssel-Videokonferenz, frühere Kennzahlen <span class="src">(Dezember 2020)</span></li>
+          <li>Zukunftsorte Berlin, „Potenzial Schöneweide“, frühere Kennzahlen <span class="src">(2020)</span> <a class="qp-req" href="mailto:burmeister@industriesalon.de?subject=Standortarchiv%3A%20Zukunftsorte%20Berlin%2C%20%E2%80%9EPotenzial%20Sch%C3%B6neweide%E2%80%9C%2C%20fr%C3%BChere%20Kennzahlen">auf Anfrage</a></li>
+          <li>Zukunftsort Schöneweide, Brüssel-Videokonferenz, frühere Kennzahlen <span class="src">(Dezember 2020)</span> <a class="qp-req" href="mailto:burmeister@industriesalon.de?subject=Standortarchiv%3A%20Zukunftsort%20Sch%C3%B6neweide%2C%20Br%C3%BCssel-Videokonferenz%2C%20fr%C3%BChere%20Kennzahlen">auf Anfrage</a></li>
           
         </ul>
       </div>
       <div class="qp-group">
         <h3>Standortgemeinschaft</h3>
         <ul>
-          <li>Gründungserklärung der Standortgemeinschaft Schöneweide <span class="src">(22. Mai 2024)</span></li>
-          <li>Gründungsbefragung, 11 Teilnehmende <span class="src">(Februar–April 2024)</span></li>
-          <li>„Der Bericht, Standortgemeinschaft Schöneweide", Chronik-Präsentationen <span class="src">(2024/2025)</span></li>
-          <li>Roadmap Standortgemeinschaft Schöneweide <span class="src">(v1, Mai 2026)</span></li>
-          <li>Stellungnahme und Schreiben an den Bezirk Treptow-Köpenick <span class="src">(Juli / September 2025)</span></li>
+          <li>Gründungserklärung der Standortgemeinschaft Schöneweide <span class="src">(22. Mai 2024)</span> <a class="qp-req" href="mailto:burmeister@industriesalon.de?subject=Standortarchiv%3A%20Gr%C3%BCndungserkl%C3%A4rung%20der%20Standortgemeinschaft%20Sch%C3%B6neweide">auf Anfrage</a></li>
+          <li>Gründungsbefragung, 11 Teilnehmende <span class="src">(Februar–April 2024)</span> <a class="qp-req" href="mailto:burmeister@industriesalon.de?subject=Standortarchiv%3A%20Gr%C3%BCndungsbefragung%2C%2011%20Teilnehmende">auf Anfrage</a></li>
+          <li>„Der Bericht, Standortgemeinschaft Schöneweide", Chronik-Präsentationen <span class="src">(2024/2025)</span> <a class="qp-req" href="mailto:burmeister@industriesalon.de?subject=Standortarchiv%3A%20%E2%80%9EDer%20Bericht%2C%20Standortgemeinschaft%20Sch%C3%B6neweide%22%2C%20Chronik-Pr%C3%A4sentationen">auf Anfrage</a></li>
+          <li>Roadmap Standortgemeinschaft Schöneweide <span class="src">(v1, Mai 2026)</span> <a class="qp-req" href="mailto:burmeister@industriesalon.de?subject=Standortarchiv%3A%20Roadmap%20Standortgemeinschaft%20Sch%C3%B6neweide">auf Anfrage</a></li>
+          <li>Stellungnahme und Schreiben an den Bezirk Treptow-Köpenick <span class="src">(Juli / September 2025)</span> <a class="qp-req" href="mailto:burmeister@industriesalon.de?subject=Standortarchiv%3A%20Stellungnahme%20und%20Schreiben%20an%20den%20Bezirk%20Treptow-K%C3%B6penick">auf Anfrage</a></li>
         </ul>
       </div>
       <div class="qp-group">
         <h3>Rahmenplan</h3>
         <ul>
-          <li>Rahmenplan „Historischer Industrie- und Gewerbegürtel Oberschöneweide", LOKATION:S <span class="src">(2026, Hauptbericht + Vertiefungsbereiche)</span></li>
-          <li>Dokumentation der Standortkonferenz an der HTW <span class="src">(Mai 2026)</span></li>
-          <li>Analyse der Standortanalyse, Standortgemeinschaft Schöneweide <span class="src">(Juli 2026)</span></li>
+          <li><a href="https://www.berlin.de/ba-treptow-koepenick/politik-und-verwaltung/aemter/stadtentwicklungsamt/stadtplanung/artikel.1045454.php" target="_blank" rel="noopener">Rahmenplan „Historischer Industrie- und Gewerbegürtel Oberschöneweide", LOKATION:S</a> <span class="src">(2026, Hauptbericht + Vertiefungsbereiche, Bezirksamt Treptow-Köpenick, geprüft am 20.10.2026)</span></li>
+          <li><a href="https://www.berlin.de/ba-treptow-koepenick/politik-und-verwaltung/aemter/stadtentwicklungsamt/stadtplanung/260519_standortkonferenz_dokumentation.pdf" target="_blank" rel="noopener">Dokumentation der Standortkonferenz an der HTW</a> <span class="src">(Mai 2026, PDF, geprüft am 20.10.2026)</span></li>
+          <li>Analyse der Standortanalyse, Standortgemeinschaft Schöneweide <span class="src">(Juli 2026)</span> <a class="qp-req" href="mailto:burmeister@industriesalon.de?subject=Standortarchiv%3A%20Analyse%20der%20Standortanalyse%2C%20Standortgemeinschaft%20Sch%C3%B6neweide">auf Anfrage</a></li>
         </ul>
       </div>
       <div class="qp-group">
         <h3>Transformation &amp; Wissenschaft</h3>
         <ul>
-          <li>Fachwerkstatt „Transformation im Aufbruch, Schöneweide als Lernort für gewerbliche Zukunftsstandorte", Vorbereitungspapier <span class="src">(2026)</span></li>
-          <li>Vorstudie TransWerkstatt Schöneweide <span class="src">(v3, 2026)</span></li>
-          <li>Zukunftstag der Berliner Gewerbe- und Industriegebiete, SenWEB <span class="src">(Juli 2026)</span></li>
-          <li>TransLab Schöneweide, Gründungsmemorandum <span class="src">(v2, 2026)</span></li>
+          <li>Fachwerkstatt „Transformation im Aufbruch, Schöneweide als Lernort für gewerbliche Zukunftsstandorte", Vorbereitungspapier <span class="src">(2026)</span> <a class="qp-req" href="mailto:burmeister@industriesalon.de?subject=Standortarchiv%3A%20Fachwerkstatt%20%E2%80%9ETransformation%20im%20Aufbruch%2C%20Sch%C3%B6neweide%20als%20Lernort%20f%C3%BCr%20gewerbliche%20Zukunftsstandorte%22%2C%20Vorbereitungspapier">auf Anfrage</a></li>
+          <li>Vorstudie TransWerkstatt Schöneweide <span class="src">(v3, 2026)</span> <a class="qp-req" href="mailto:burmeister@industriesalon.de?subject=Standortarchiv%3A%20Vorstudie%20TransWerkstatt%20Sch%C3%B6neweide">auf Anfrage</a></li>
+          <li><a href="https://www.berlin.de/sen/web/presse/pressemitteilungen/2026/20260716_pm-zukunftstag-gewerbegebiete.pdf" target="_blank" rel="noopener">Zukunftstag der Berliner Gewerbe- und Industriegebiete, SenWEB</a> <span class="src">(Juli 2026, Pressemitteilung, geprüft am 20.10.2026)</span></li>
+          <li>TransLab Schöneweide, Gründungsmemorandum <span class="src">(v2, 2026)</span> <a class="qp-req" href="mailto:burmeister@industriesalon.de?subject=Standortarchiv%3A%20TransLab%20Sch%C3%B6neweide%2C%20Gr%C3%BCndungsmemorandum">auf Anfrage</a></li>
         </ul>
       </div>
       <div class="qp-group">
         <h3>Festival, Tourismus &amp; Positionierung</h3>
         <ul>
-          <li>Futura Biennale 2027, Konzept <span class="src">(2026)</span></li>
-          <li>Tourismus- und Stadtmarketingkonzept Treptow-Köpenick 2026–2035, CIMA / tourismus plan B <span class="src">(Schwerpunkt Transformation &amp; Science)</span></li>
-          <li>Positionierung des Industriesalons als Zukunftsort-Vermittler <span class="src">(v1, 2026)</span></li>
+          <li>Futura Biennale 2027, Konzept <span class="src">(2026)</span> <a class="qp-req" href="mailto:burmeister@industriesalon.de?subject=Standortarchiv%3A%20Futura%20Biennale%202027%2C%20Konzept">auf Anfrage</a></li>
+          <li>Tourismus- und Stadtmarketingkonzept Treptow-Köpenick 2026–2035, CIMA / tourismus plan B <span class="src">(Schwerpunkt Transformation &amp; Science)</span> <a class="qp-req" href="mailto:burmeister@industriesalon.de?subject=Standortarchiv%3A%20Tourismus-%20und%20Stadtmarketingkonzept%20Treptow-K%C3%B6penick%202026%E2%80%932035%2C%20CIMA%20/%20tourismus%20plan%20B">auf Anfrage</a></li>
+          <li>Positionierung des Industriesalons als Zukunftsort-Vermittler <span class="src">(v1, 2026)</span> <a class="qp-req" href="mailto:burmeister@industriesalon.de?subject=Standortarchiv%3A%20Positionierung%20des%20Industriesalons%20als%20Zukunftsort-Vermittler">auf Anfrage</a></li>
         </ul>
       </div>
     </div>
@@ -1124,10 +1197,12 @@ function openRoadmap(){var r=document.getElementById('rmpage');r.hidden=false;do
 function closeRoadmap(){document.getElementById('rmpage').hidden=true;document.body.style.overflow='';}
 function openQuellen(){var q=document.getElementById('qpage');q.hidden=false;document.body.style.overflow='hidden';q.scrollTop=0;}
 function closeQuellen(){document.getElementById('qpage').hidden=true;document.body.style.overflow='';}
+function openLegal(id){['qpage','ipage','dpage'].forEach(function(x){var e=document.getElementById(x);if(e)e.hidden=true;});var q=document.getElementById(id);q.hidden=false;document.body.style.overflow='hidden';q.scrollTop=0;}
+function closeLegal(id){document.getElementById(id).hidden=true;document.body.style.overflow='';}
 function openWerkstatt(){var w=document.getElementById('wpage');w.hidden=false;document.body.style.overflow='hidden';w.scrollTop=0;}
 function closeWerkstatt(){document.getElementById('wpage').hidden=true;document.body.style.overflow='';}
 var WPCAP=[
- {cat:`Standortanalyse & Wissen`,kw:['analys','standort','wissen','archiv','register','daten','recherche','dokument','fakt','zahl'],t:`Standort analysieren und Wissen zugänglich machen`,a:`Wir lesen die Tiefenstruktur eines Standorts, kartieren die Akteure und machen das Wissen offen zugänglich, wie im offenen Standortarchiv Schöneweide des Industriesalons.`},
+ {cat:`Standortanalyse & Wissen`,kw:['analys','standort','wissen','archiv','register','daten','recherche','dokument','fakt','zahl'],t:`Standort analysieren und Wissen zugänglich machen`,a:`Wir lesen die Tiefenstruktur eines Standorts, kartieren die Akteure und machen das Wissen zugänglich, wie im Standortarchiv Schöneweide des Industriesalons.`},
  {cat:`Foresight & Szenarien`,kw:['zukunft','foresight','szenari','trend','vision','strateg','prognose','korridor','morgen'],t:`Zukünfte durchdenken`,a:`Wir entwerfen Szenarien und Zukunftskorridore und übersetzen sie in konkrete Handlungsoptionen, statt starrer Masterpläne eine Suchbewegung mit Richtung.`},
  {cat:`Werkstatt- & Beteiligungsformate`,kw:['workshop','werkstatt','beteilig','moderat','format','konferenz','dialog','treffen','veranstalt','fachwerkstatt','salon'],t:`Formate bauen, in denen etwas entsteht`,a:`Wir bauen Situationen, in denen Akteure zusammenkommen, die sich sonst nicht begegnen, Fachwerkstatt, Salongespräch, Standortkonferenz. Mit konkreten nächsten Schritten statt Absichtserklärungen.`},
  {cat:`Kommunikation & Sichtbarkeit`,kw:['kommunikation','website','webseite','presse','kampagne','sichtbar','text','marketing','öffentlich','story','erzähl'],t:`Komplexes verständlich und sichtbar machen`,a:`Wir übersetzen komplexe Standortthemen in klare Sprache und Bilder, Websites, Berichte, Kampagnen, Pressearbeit. Diese Seite ist ein Beispiel dafür.`},
@@ -1279,5 +1354,6 @@ function zkSend(){
   location.href='mailto:burmeister@industriesalon.de?subject='+encodeURIComponent('Zielkonflikt-Karte Schöneweide')+'&body='+encodeURIComponent(body);
 }
 </script>
+<script>(function(){var h=location.hash;if(h==="#impressum")openLegal("ipage");if(h==="#datenschutz")openLegal("dpage");})();</script>
 </body>
 </html>
