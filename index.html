@@ -219,7 +219,9 @@ section.alt .tl-detail{background:var(--bg-alt)}
 .rm-btn{margin-top:22px;background:var(--navy);color:#fff;border:0;border-radius:6px;padding:14px 28px;font-size:15px;font-weight:700;cursor:pointer;font-family:inherit;letter-spacing:.01em}
 .rm-btn:hover{background:var(--navy-2)}
 /* ROADMAP SUBPAGE */
-#rmpage,#qpage,#wpage,#ipage,#dpage{position:fixed;inset:0;z-index:200;background:#fff;overflow-y:auto}
+#rmpage,.rp-resp.rp-four{grid-template-columns:repeat(2,1fr)}
+@media(max-width:860px){.rp-resp.rp-four{grid-template-columns:1fr}}
+#qpage,#wpage,#ipage,#dpage{position:fixed;inset:0;z-index:200;background:#fff;overflow-y:auto}
 .qp-legend{font-size:13.5px;color:var(--ink);opacity:.8;margin:-6px 0 26px}
 .qp-req,.qp-req-demo{display:inline-block;font-size:11.5px;font-weight:600;letter-spacing:.02em;color:var(--steel);border:1px solid var(--steel);border-radius:3px;padding:0 6px;margin-left:4px;text-decoration:none;white-space:nowrap}
 .qp-req:hover{background:var(--steel);color:#fff}
@@ -687,34 +689,14 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
     <div class="sec-head">
       <div class="kicker">Die Gemeinschaft</div>
       <h2>Wer zusammenkommt</h2>
-      <p>Unternehmen, Hochschule, Kultur, Projektentwickler und Eigentümer, die Breite des Standortes an einem Tisch. Eine Auswahl der beteiligten Häuser und Institutionen.</p>
+      <p>Hochschule, Kultur und Unternehmen an einem Tisch. Das sind die Mitglieder der Standortgemeinschaft.</p>
     </div>
     <div class="mgrid">
       <div class="morg">HTW Berlin</div>
       <div class="morg">Industriesalon Schöneweide e.V.</div>
-      <div class="morg">Unternehmerkreis Schöneweide e.V.</div>
-      <div class="morg">Trockland</div>
       <div class="morg">KAOS Berlin</div>
-      <div class="morg">Stiftung Reinbeckhallen</div>
-      <div class="morg">Basecamp Students</div>
-      <div class="morg">BAE Batterien GmbH</div>
-      <div class="morg">DIE AG Schöneweide</div>
-      <div class="morg">Bärenquell Brauerei</div>
-      <div class="morg">ADMOS</div>
-      <div class="morg">Wilms GmbH</div>
-      <div class="morg">Simmo AG / Leuchtenfabrik</div>
-      <div class="morg">Kino Spreehöfe</div>
-      <div class="morg">First Sensor</div>
-      <div class="morg">Zukunftsorte Berlin e.V.</div>
-      <div class="morg">WISTA Management GmbH</div>
-      <div class="morg">Marco Polo Capital GmbH</div>
-    </div>
-    <div class="partners">
-      <h3>Im Gespräch, neue Partner</h3>
-      <div class="mgrid">
-        <div class="morg">Livos-Gruppe Management GmbH<small>Laila Glossner</small></div>
-        <div class="morg">Empira Asset Management GmbH<small>Ellen Göbel · Projektentwicklung</small></div>
-      </div>
+      <div class="morg">Trockland</div>
+      <div class="morg">Unternehmerkreis Schöneweide e.V.</div>
     </div>
   </div>
 </section>
@@ -780,7 +762,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
         <p>So wird aus einem Plan ein gemeinsamer Weg.</p>
       </div>
     </div>
-    <div class="rp-resp">
+    <div class="rp-resp rp-four">
       <div class="rp-card">
         <div class="rk">Erarbeiten</div>
         <h4>Fachwerkstatt „Transformation im Aufbruch"</h4>
@@ -798,6 +780,12 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
         <h4>Salongespräch „Rahmenplan, und was nun?"</h4>
         <p>Im Industriesalon kommen Verwaltung, Wirtschaft, Wissenschaft und Zivilgesellschaft zusammen, um den Rahmenplan öffentlich weiterzudenken, offen, konkret und auf Augenhöhe.</p>
         <div class="when">geplant · Industriesalon Schöneweide</div>
+      </div>
+      <div class="rp-card">
+        <div class="rk">Weiterdenken · Option</div>
+        <h4>EXPO 2035 in Berlin und Brandenburg</h4>
+        <p>Berlin und Brandenburg prüfen eine gemeinsame Bewerbung um die Weltausstellung 2035. Kommt sie, bietet sich Schöneweide als Ort an, an dem sich Transformation schon heute zeigen lässt. Die Futura Biennale und der Handwerker-Campus können dafür Bausteine sein.</p>
+        <div class="when">Option · offen</div>
       </div>
     </div>
   </div>
